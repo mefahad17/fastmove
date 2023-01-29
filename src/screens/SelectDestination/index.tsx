@@ -1,44 +1,38 @@
-import React from 'react';
-import { ImageURISource } from 'react-native';
+
+import { View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import Button from '../../components/Button';
 
-import homeIcon from '../../assets/home.png';
-import historyIcon from '../../assets/history.png';
+import Button from '../../components/Button';
+import React, { useState } from 'react'
+
+import {Picker} from '@react-native-picker/picker';
 
 import * as S from './styles';
 
-export interface IItemProps {
-  id: number;
-  icon: ImageURISource;
-  text: string;
-  subtext?: string;
-}
-
-interface IRenderItemProps {
-  item: IItemProps; // TODO: Verificar
-}
-
-const data: IItemProps[] = [
-  { id: 1, icon: homeIcon, text: 'Home', subtext: '' },
-  { id: 2, icon: historyIcon, text: ' Lahore' },
-  { id: 3, icon: historyIcon, text: 'karachi' },
-  { id: 4, icon: historyIcon, text: 'Multan' },
-];
-
 const SelectDestination: React.FC = () => {
   const navigation = useNavigation();
+  
+  const [selectedDay, setSelectedDay] = useState<number>(1);
+  const [selectedMonth, setSelectedMonth] = useState<number>(1);
+  const [selectedYear, setSelectedYear] = useState<number>(100);
 
-  function renderItem({ item }: IRenderItemProps) {
-    return (
-      <S.HistoryItem>
-        <S.ItemIcon source={item.icon} />
-        <S.ItemText>{item.text}</S.ItemText>
-        {item.subtext && <S.ItemText small>{item.subtext}</S.ItemText>}
-      </S.HistoryItem>
-    );
-  }
+  const days = [...Array(31).keys()].map(i => i + 1);
+  const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+  const years = [...Array(10).keys()].map(i => i + 2022);
 
   return (
     <S.Container>
@@ -46,24 +40,53 @@ const SelectDestination: React.FC = () => {
         <S.Timeline>
           <S.Dot />
           <S.Dash />
-          <S.Dot secondary />
+          <S.Dot secondary = {true}/>
         </S.Timeline>
         <S.FromTo>
-          <S.From>From</S.From>
-          <S.To>Destination</S.To>
+          <S.From placeholder="From"></S.From>
+          <S.To placeholder="To"></S.To>
         </S.FromTo>
       </S.TopContainer>
       <S.Shadow />
-      <S.HistoryList
-        data={data}
-        renderItem={renderItem}
-        keyExtractor={item => String(item.id)}
-      />
+      <View style = {{display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center"}}>
+      <S.Label>Date</S.Label>
+      <Picker
+        selectedValue={selectedDay}
+        style={{ height: 20, width: 100 }}
+        onValueChange={(itemValue: number, itemIndex: number) => setSelectedDay(itemValue)}
+      >
+        {days.map(day => (
+          <Picker.Item label={day.toString()} value={day} key={day} />
+        ))}
+      </Picker>
+      <S.Label>Date</S.Label>
+      <Picker
+        selectedValue={selectedMonth}
+        style={{ height: 20, width: 100 }}
+        onValueChange={(itemValue: number, itemIndex: number) => setSelectedMonth(itemValue)}
+      >
+        {months.map((month, index) => (
+          <Picker.Item label={month} value={index+1} key={month} />
+        ))}
+      </Picker>
+      <S.Label>Date</S.Label>
+      <Picker
+        selectedValue={selectedYear}
+        style={{ height: 20, width: 100 }}
+        onValueChange={(itemValue: number, itemIndex: number) => setSelectedYear(itemValue)}
+      >
+        {years.map(year => (
+          <Picker.Item label={year.toString()} value={year} key={year} />
+        ))}
+      </Picker>
+    </View>     
+     
       <S.BottomContainer>
         <Button onPress={() => navigation.navigate('Request')}>Done</Button>
       </S.BottomContainer>
     </S.Container>
   );
+
 };
 
 export default SelectDestination;

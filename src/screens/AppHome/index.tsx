@@ -30,7 +30,7 @@ const AppHome: React.FC = () => {
 
         >
           <S.ToContainer>
-            <S.To>Search...</S.To>
+            <S.To placeholder="search"></S.To>
           </S.ToContainer>
         </S.WhereToButton>
       </S.WhereToContainer>

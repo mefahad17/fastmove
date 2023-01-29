@@ -68,11 +68,14 @@ export const ToContainer = styled.View`
   align-items: center;
 `;
 
-export const To = styled.Text<ThemeProps>`
-  font-family: ${({ theme }) => theme.font.regular};
-  font-size: 18px;
-  color: ${({ theme }) => theme.color.primary};
+export const To = styled.TextInput<ThemeProps>`
+width: 100%;
+  // font-family: ${({ theme }) => theme.font.regular};
+  // font-size: 18px;
+  // color: ${({ theme }) => theme.color.primary};
+  
 `;
+
 
 export const Stack = styled.View`
 flex-direction: row;
