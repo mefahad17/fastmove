@@ -6,7 +6,10 @@ import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Entypo';
 import IconA from 'react-native-vector-icons/AntDesign';
 import IconE from 'react-native-vector-icons/EvilIcons';
-import { Text, View } from 'react-native';
+import IconC from "react-native-vector-icons/Entypo";
+import IconF from "react-native-vector-icons/MaterialIcons";
+
+import { Text, View,TouchableOpacity, } from 'react-native';
 import Button from '../../components/Button';
 
 
@@ -23,6 +26,13 @@ const AppHome: React.FC = () => {
             <IconA name="home" size={30} color="black"/>
             <S.BoldText>Fast-Move</S.BoldText>
             </S.HeaderView>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+      
+      <TouchableOpacity>
+        <IconC name="user" size={30} onPress={() => navigation.navigate('Profile')} />
+        
+      </TouchableOpacity>
+    </View>
         
         </S.Header>
         <S.WhereToContainer>
@@ -49,10 +59,22 @@ const AppHome: React.FC = () => {
         <IconE name="credit-card" size={30} color="white"/>
         <S.CText>Check Out</S.CText>
       </S.LinkContainer>
-      <S.LinkContainer>
+      <S.LinkContainer onPress={() => navigation.navigate('CurrentLocation')}>
         <Icon name="location" size={30} color="white"/>
         <S.CText>Track Rides</S.CText>
       </S.LinkContainer>
+      
+      </S.Stack>
+      <S.Stack>
+      <S.LinkContainer>
+        <IconE name="credit-card" size={30} color="white"/>
+        <S.CText>Complaint</S.CText>
+      </S.LinkContainer>
+      <S.LinkContainer>
+        <IconF name="feedback" size={30} color="white"/>
+        <S.CText>Review</S.CText>
+      </S.LinkContainer>
+      
       </S.Stack>
     </S.Container>
   );

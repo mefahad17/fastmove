@@ -26,7 +26,8 @@ export const Bottom = styled.View`
 export const Options = styled.View`
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 20px
+  margin-bottom: 20px;
+  
 `;
 
 export const CreditCardInfo = styled.View`

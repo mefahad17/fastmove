@@ -16,6 +16,7 @@ import Request from './screens/Request';
 import YourRide from './screens/YourRide';
 import AppHome from './screens/AppHome';
 import CreateAccount from './screens/Createaccount';
+import Profile from './screens/Profile';
 
 
 const Stack = createStackNavigator();
@@ -32,6 +33,7 @@ const Index: React.FC = () => {
           <Stack.Screen name="AddCard" component={AddCard} />
           <Stack.Screen name="AppHome" component={AppHome} />
           <Stack.Screen name="CurrentLocation" component={CurrentLocation} />
+          <Stack.Screen name="Profile" component={Profile} />
           <Stack.Screen
             name="SelectDestination"
             component={SelectDestination}

@@ -74,6 +74,7 @@ const CreateAccount: React.FC = () => {
         <S.CardInputWrapper focused={focused === 'number'}>
           <S.CardInput
             value={password}
+            secureTextEntry={true}
             onChangeText={setpassword}
             onFocus={() => setFocused('number')}
             maxLength={19}

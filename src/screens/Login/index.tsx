@@ -35,6 +35,26 @@ const Login: React.FC = () => {
     const errorCode = error.code;
     const errorMessage = error.message;
   });
+  const validatePassword = () => {
+    if (password.length < 8) {
+      return "Password must be at least 8 characters long";
+    }
+    if (!/\d/.test(password)) {
+      return "Password must contain at least one digit";
+    }
+    if (!/[!@#$%^&*]/.test(password)) {
+      return "Password must contain at least one special character (!@#$%^&*)";
+    }
+    return "";
+  };
+  const error = validatePassword();
+if (error) {
+  alert(error);
+  return;
+}
+// continue with form submission
+
+  
     
   }
 
@@ -53,6 +73,7 @@ const Login: React.FC = () => {
         <S.CardInputWrapper focused={focused === 'pass'}>
           <S.CardInput
             value={password}
+            secureTextEntry={true}
             onChangeText={setpassword}
             onFocus={() => setFocused('pass')}
             maxLength={19}

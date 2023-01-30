@@ -59,7 +59,7 @@ const Request: React.FC = () => {
           coordinate={{ latitude: -19.916483, longitude: -43.935129 }}
         >
           <Callout>
-            <Text>Praça da Estação</Text>
+            <Text>text</Text>
           </Callout>
         </Marker>
         <Marker
@@ -67,7 +67,7 @@ const Request: React.FC = () => {
           coordinate={{ latitude: -19.921655, longitude: -43.938881 }}
         >
           <Callout>
-            <Text>Igreja de São José</Text>
+            <Text>callout</Text>
           </Callout>
         </Marker>
       </S.Map>
@@ -83,23 +83,6 @@ const Request: React.FC = () => {
             height: 300,
           }}
         />
-        <S.Options>
-          <CarButton
-            text="Economy"
-            onPress={() => setSelected('economy')}
-            active={selected === 'economy'}
-          />
-          <CarButton
-            text="Luxury"
-            onPress={() => setSelected('luxury')}
-            active={selected === 'luxury'}
-          />
-          <CarButton
-            text="Family"
-            onPress={() => setSelected('family')}
-            active={selected === 'family'}
-          />
-        </S.Options>
         <Button onPress={() => navigation.navigate('YourRide')}>
           Send Request
         </Button>

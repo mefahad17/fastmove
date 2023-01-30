@@ -90,7 +90,6 @@ export const Label = styled.Text<ThemeProps>`
   font-family: ${({ theme }) => theme.font.regular};
   font-size: 15px;
   color: ${({ theme }) => theme.color.primary};
-  marginTop:10px;
 `;
 
 export const Input = styled.TextInput<InputProps>`
@@ -106,6 +105,7 @@ export const Input = styled.TextInput<InputProps>`
   margin: 10px;
   border-radius: 5px; 
 `;
+
 export const HistoryList = styled(FlatList as new () => FlatList<IItemProps>)`
   width: 100%;
   height: 80%;
@@ -135,4 +135,17 @@ export const ItemText = styled.Text<IItemText>`
 export const BottomContainer = styled.View`
   width: 100%;
   padding: 10%;
+`;
+export const Options = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  
+  
+`;
+export const Bottom = styled.View`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10% 10% 30px 10%;
 `;
