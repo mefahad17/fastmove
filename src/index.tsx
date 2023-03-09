@@ -24,6 +24,9 @@ import bookinghistory from './screens/bookinghistory';
 import notifications from './screens/notifications';
 import pendingtickets from './screens/pendingtickets';
 import bookedtickets from './screens/bookedticket';
+import complain from './screens/complain';
+import helpline from './screens/helpline';
+import buscancelled from './screens/buscancelled';
 
 
 
@@ -49,6 +52,9 @@ const Index: React.FC = () => {
           <Stack.Screen name="notifications" component={notifications} />
           <Stack.Screen name="pendingtickets" component={pendingtickets} />
           <Stack.Screen name="bookedtickets" component={bookedtickets} />
+          <Stack.Screen name="complain" component={complain} />
+          <Stack.Screen name="helpline" component={helpline} />
+          <Stack.Screen name="buscancelled" component={buscancelled} />
           <Stack.Screen
             name="SelectDestination"
             component={SelectDestination}

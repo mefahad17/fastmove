@@ -118,3 +118,9 @@ flex-direction: row;
 align-items: center;
 
 `;
+export const Img = styled.Image`
+  width: ${props => props.size ? `${props.size}px` : '150px'};
+  height: ${props => props.size ? `${props.size}px` : '100px'};
+  bottom: -2%;
+  background-color: #f9f9f9;
+`;

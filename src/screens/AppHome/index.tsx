@@ -3,6 +3,7 @@ import { Alert, TextComponent } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import { useNavigation } from '@react-navigation/native';
 import { DrawerLayoutAndroid } from 'react-native';
+import mainlogo from '../../assets/mainlogo-sm.png'
 
 import Icon from 'react-native-vector-icons/Entypo';
 import IconA from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -44,6 +45,7 @@ const AppHome: React.FC = () => {
         <S.Header>
             <S.HeaderView>
             <IconB name="menu" onPress={() => navigation.navigate('Sidebar')}size={30}  color="black"/>
+            <S.Img source={mainlogo} resizeMode="contain" size={55} /> 
             <S.BoldText>Fast-Move</S.BoldText>
             </S.HeaderView>
             <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -74,7 +76,7 @@ const AppHome: React.FC = () => {
       <S.LinkContainer onPress={() => navigation.navigate('busshedules')}>
       <View style={{ alignItems: 'center' }}>
       <IconA name="bus-clock"  size={55} color="white"/>
-      <S.CText>Bus timings</S.CText>
+      <S.CText>Buses Schedules</S.CText>
 
       </View>
       </S.LinkContainer>
@@ -95,7 +97,14 @@ const AppHome: React.FC = () => {
         </View>
       </S.LinkContainer>
       </S.Stack>
-      <Text style={{ fontSize: 30, color: 'black', position: 'relative', right: 0 }}>Other Information</Text>
+      <S.Stack>
+      
+  <Text style={{ fontSize: 25, color: 'black', position: 'relative', right: 0 }}>Other Information</Text>
+
+        
+      </S.Stack>
+    
+      
       <S.Stack>
       <S.LinkContainer onPress={() => navigation.navigate('notifications')}>
         <View style={{ alignItems: 'center' }}>
@@ -117,17 +126,21 @@ const AppHome: React.FC = () => {
     <Text style={{color: 'white', textAlign: 'center',}}>Rate us</Text>
   </View>
   <View style={{ alignItems: 'center' }}>
-    <IconH name="bus-alert" size={35} color="white" style={{marginRight: 100,marginTop:-20}} />
+    <IconH onPress={() => navigation.navigate('buscancelled')} name="bus-alert" size={35} color="white" style={{marginRight: 100,marginTop:-20}} />
     <Text style={{color: 'white', textAlign: 'center'}}>Bus cancelled</Text>
   </View>
   <View style={{ alignItems: 'center' }}>
-    <IconI name="phone-call" size={30} color="white" style={{marginRight: 100,marginTop:-20}} />
+    <IconI onPress={() => navigation.navigate('helpline')}  name="phone-call" size={30} color="white" style={{marginRight: 100,marginTop:-20}} />
     <Text style={{color: 'white', textAlign: 'center'}}>Helpline</Text>
   </View>
-  <View style={{ alignItems: 'center' }}>
-    <IconJ name="credit-card" size={35} color="white" style={{ marginTop:-20 }} />
+  <View >
+  <View style={{ alignItems: 'center' }} >
+    <IconJ onPress={() => navigation.navigate('complain')}  name="credit-card" size={35} color="white" style={{ marginTop:-20 }} />
     <Text style={{color: 'white', textAlign: 'center'}}>Complain</Text>
   </View>
+
+  </View>
+ 
 </S.Stack>
 
        
