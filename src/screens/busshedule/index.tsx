@@ -30,9 +30,7 @@ const busshedules: React.FC = () => {
         
         </S.Header>
         <S.WhereToContainer>
-        <S.WhereToButton
-
-        >
+        <S.WhereToButton >
           <S.ToContainer>
             <S.To placeholder="search"></S.To>
           </S.ToContainer>

@@ -19,6 +19,12 @@ import CreateAccount from './screens/Createaccount';
 import Profile from './screens/Profile';
 import Sidebar from './screens/Sidebar';
 import busshedules from './screens/busshedule';
+import seatbooking from './screens/seatbooking';
+import bookinghistory from './screens/bookinghistory';
+import notifications from './screens/notifications';
+import pendingtickets from './screens/pendingtickets';
+import bookedtickets from './screens/bookedticket';
+
 
 
 const Stack = createStackNavigator();
@@ -38,6 +44,11 @@ const Index: React.FC = () => {
           <Stack.Screen name="Profile" component={Profile} />
           <Stack.Screen name="Sidebar" component={Sidebar} />
           <Stack.Screen name="busshedules" component={busshedules} />
+          <Stack.Screen name="seatbooking" component={seatbooking} />
+          <Stack.Screen name="bookinghistory" component={bookinghistory} />
+          <Stack.Screen name="notifications" component={notifications} />
+          <Stack.Screen name="pendingtickets" component={pendingtickets} />
+          <Stack.Screen name="bookedtickets" component={bookedtickets} />
           <Stack.Screen
             name="SelectDestination"
             component={SelectDestination}
