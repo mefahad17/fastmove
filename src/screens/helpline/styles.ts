@@ -50,7 +50,7 @@ font-size:15px;
 `;
 
 export const LinkContainer = styled(RectButton)`
-    background-color: black;
+    background-color: #0a84ff;
     padding: 25px;
     width: 300px;
     height: 170px;

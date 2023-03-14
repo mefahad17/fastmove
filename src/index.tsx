@@ -27,8 +27,8 @@ import bookedtickets from './screens/bookedticket';
 import complain from './screens/complain';
 import helpline from './screens/helpline';
 import buscancelled from './screens/buscancelled';
-
-
+import AboutUsScreen from './screens/AboutUsScreen';
+import busavailbility from './screens/busavailbility';
 
 const Stack = createStackNavigator();
 
@@ -55,6 +55,8 @@ const Index: React.FC = () => {
           <Stack.Screen name="complain" component={complain} />
           <Stack.Screen name="helpline" component={helpline} />
           <Stack.Screen name="buscancelled" component={buscancelled} />
+          <Stack.Screen name="AboutUsScreen" component={AboutUsScreen} />
+          <Stack.Screen name="busavailbility" component={busavailbility} />
           <Stack.Screen
             name="SelectDestination"
             component={SelectDestination}

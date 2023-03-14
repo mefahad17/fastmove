@@ -7,7 +7,7 @@ export const Container = styled(RectButton)`
   align-items: center;
   justify-content: center;
   width: 100%;
-  background: ${({ theme }: ThemeProps) => theme.color.primary};
+  background:#0a84ff;
   border-radius: 27.5px;
   height: 55px;
 `;

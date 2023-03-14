@@ -11,13 +11,13 @@ import IconB from 'react-native-vector-icons/Entypo';
 import IconE from 'react-native-vector-icons/Ionicons';
 import IconC from "react-native-vector-icons/Entypo";
 import IconD from "react-native-vector-icons/FontAwesome";
-
 import IconF from "react-native-vector-icons/FontAwesome";
 import IconG from "react-native-vector-icons/MaterialIcons";
 import IconH from "react-native-vector-icons/MaterialIcons";
 import IconI from "react-native-vector-icons/Feather";
 import IconJ from "react-native-vector-icons/FontAwesome";
 import IconK from "react-native-vector-icons/MaterialIcons";
+import IconL from "react-native-vector-icons/FontAwesome5";
 
 
 import { Text, View,TouchableOpacity, } from 'react-native';
@@ -27,17 +27,9 @@ import Button from '../../components/Button';
 import * as S from './styles';
 import styled from 'styled-components';
 import { Right } from 'components/Header/styles';
-function openSidebar(drawerRef: React.RefObject<DrawerLayoutAndroid>): void {
-  drawerRef.current?.openDrawer();
-}
+
 
 const AppHome: React.FC = () => {
-  const drawerRef = React.useRef<DrawerLayoutAndroid>(null);
-
-  function handleButtonPress(): void {
-    openSidebar(drawerRef);
-  }
- 
     const navigation = useNavigation();
   return (
     <S.Container>
@@ -45,7 +37,7 @@ const AppHome: React.FC = () => {
         <S.Header>
             <S.HeaderView>
             <IconB name="menu" onPress={() => navigation.navigate('Sidebar')}size={30}  color="black"/>
-            <S.Img source={mainlogo} resizeMode="contain" size={55} /> 
+            <IconL name="bus-alt" size={30}  color="#0a84ff"/> 
             <S.BoldText>Fast-Move</S.BoldText>
             </S.HeaderView>
             <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -98,13 +90,7 @@ const AppHome: React.FC = () => {
       </S.LinkContainer>
       </S.Stack>
       <S.Stack>
-      
-  <Text style={{ fontSize: 25, color: 'black', position: 'relative', right: 0 }}>Other Information</Text>
-
-        
       </S.Stack>
-    
-      
       <S.Stack>
       <S.LinkContainer onPress={() => navigation.navigate('notifications')}>
         <View style={{ alignItems: 'center' }}>

@@ -12,7 +12,7 @@ const Button: React.FC<IProps> = ({ onPress, style, color }) => {
     <TouchableOpacity
       onPress={onPress}
       style={{
-        backgroundColor: color || 'black',
+        backgroundColor: color || '#0a84ff',
         padding: 15,
         borderRadius: 9,
         ...style,

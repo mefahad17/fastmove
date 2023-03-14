@@ -1,54 +1,79 @@
 import React, { useEffect, useState } from 'react';
-import { Alert } from 'react-native';
+import { Alert, ImageBackgroundBase, TextComponent } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import { useNavigation } from '@react-navigation/native';
+import { DrawerLayoutAndroid } from 'react-native';
 
-import Icon from 'react-native-vector-icons/Entypo';
-import IconA from 'react-native-vector-icons/AntDesign';
-import IconE from 'react-native-vector-icons/EvilIcons';
-import IconC from "react-native-vector-icons/Entypo";
 
-import { Text, View,TouchableOpacity, } from 'react-native';
-import Button from '../../components/Button';
+
+
+import { Text, View,TextInput,TouchableOpacity, } from 'react-native';
+import Button from '../../screens/complain/button';
+
 
 
 import * as S from './styles';
 import styled from 'styled-components';
+import { Center, Right } from 'components/Header/styles';
+interface FeedbackFormProps {
+  onSubmit: (feedback: string) => void;
+}
 
-const AppHome: React.FC = () => {
- 
-    const navigation = useNavigation();
+
+const profile: React.FC = () => {
+  const navigation = useNavigation();
+  const [focused, setFocused] = useState('');
+  const [name, setName] = useState('');
+  const [email, setemail] = useState('');
+  const [ phone, setPhone] = useState('');
+  
+
+
+
+
   return (
-    <S.Container>
-        <S.Header>
-            <S.HeaderView>
-            <IconA name="home" size={30} color="black"/>
-            <S.BoldText>Fast-Move</S.BoldText>
-            </S.HeaderView>
-        </S.Header>
-        <View >
-            <S.BoldText style={{marginTop:20, }}>Profile Detail</S.BoldText>
-            
-         
-      <Text style={{fontSize:25,marginTop:40,marginRight:220,}} >User Name</Text>
-      <Text style={{fontSize:15,marginTop:15,marginLeft:50,}} >user.@gmail.com</Text>
-      <View >
-        <Text style={{fontSize:25,marginTop:40,}} >Phone:</Text>
-        <Text style={{fontSize:15,marginTop:15,marginLeft:50,}} >+9235-55-5555</Text>
-      </View>
-      <View >
-        <Text style={{fontSize:25,marginTop:40,}} >Location:</Text>
-        <Text style={{fontSize:15,marginTop:15,marginLeft:50,}} >City,</Text>
-      </View>
-            
-            
+    <S.Container>    
+      <S.Header>
+        <S.HeaderView>   
+          <S.BoldText>Fast-Move</S.BoldText>
+        </S.HeaderView>
+        <View style={{ flexDirection: "row", alignItems: "center" }} />
+      </S.Header>
+     
+      <Text style={{ fontSize: 25, textAlign: 'center', fontWeight: 'bold' }}>Profile Details</Text>
 
-        </View>
-
-        <Button style={{width:140,marginTop:100,}}>Edit profile</Button>
-      
+      <S.Inner>
+        <S.Label>Name</S.Label>
+        <S.Input
+          value={name}
+          onChangeText={setName}
+          onFocus={() => setFocused('name')}
+          focused={focused === 'name'}
+        />
+        <S.Label>Email</S.Label>
+        <S.CardInputWrapper focused={focused === 'email'}>
+          <S.CardInput
+            value={email}
+            onChangeText={setemail}
+            onFocus={() => setFocused('email')}
+            focused={focused === 'email'}
+          />
+        </S.CardInputWrapper>
+        <S.Label>Phone Number</S.Label>
+        <S.CardInputWrapper focused={focused === 'phone'}>
+          <S.CardInput
+            keyboardType="number-pad"
+            value={phone}
+            onChangeText={setPhone}
+            onFocus={() => setFocused('phone')}
+            focused={focused === 'phone'}
+            maxLength={19}
+          />
+        </S.CardInputWrapper>
+      </S.Inner>
     </S.Container>
   );
 };
 
-export default AppHome;
+export default profile;
+

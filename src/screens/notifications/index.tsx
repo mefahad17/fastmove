@@ -4,9 +4,6 @@ import MapView, { Marker } from 'react-native-maps';
 import { useNavigation } from '@react-navigation/native';
 import { DrawerLayoutAndroid } from 'react-native';
 
-
-
-
 import { Text, View,TouchableOpacity, } from 'react-native';
 import Button from '../../components/Button';
 
@@ -16,33 +13,21 @@ import styled from 'styled-components';
 import { Right } from 'components/Header/styles';
 
 
-const notifications: React.FC = () => {
-
- 
+const AboutusScreen: React.FC = () => {
     const navigation = useNavigation();
   return (
     <S.Container>    
         <S.Header>
             <S.HeaderView>
-           
-            <S.BoldText>Fast-Move</S.BoldText>
+            <S.BoldText>Fast Move</S.BoldText>
             </S.HeaderView>
             <View style={{ flexDirection: "row", alignItems: "center" }}>
     </View>    
      </S.Header>
-     <S.BoldText>Notifications</S.BoldText>
      
-
-    
-        
-      
      
-      
-    
- 
-      
     </S.Container>
   );
 };
 
-export default notifications;
+export default AboutusScreen;

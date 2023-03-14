@@ -83,7 +83,7 @@ const Request: React.FC = () => {
             height: 300,
           }}
         />
-        <Button onPress={() => navigation.navigate('seatbooking')}>
+        <Button onPress={() => navigation.navigate('busavailbility')}>
           Send Request
         </Button>
       </S.Bottom>

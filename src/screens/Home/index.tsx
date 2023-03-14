@@ -27,10 +27,10 @@ const Home: React.FC = () => {
           <S.TitleBold>FastMove</S.TitleBold>
         </S.Title>
         
-        <Button onPress={() => navigation.navigate('CreateAccount')} style={{marginBottom: 5}}>
+        <Button onPress={() => navigation.navigate('CreateAccount')} style={{marginBottom: 5,backgroundColor:'#0a84ff',}}>
           Create an Account
         </Button>
-        <Button onPress={() => navigation.navigate('Login')}>
+        <Button onPress={() => navigation.navigate('Login')} style={{marginBottom: 5,backgroundColor:'#0a84ff',}}>
           Sigin
         </Button>
       </S.BottomArea>

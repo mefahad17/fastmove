@@ -91,7 +91,7 @@ padding: 10px;
 `;
 
 export const LinkContainer = styled(RectButton)`
-    background-color: black;
+    background-color: #0a84ff;
     padding: 10px;
     width: 150px;
     height: 125px;
@@ -102,11 +102,11 @@ export const LinkContainer = styled(RectButton)`
     margin: 10px;
 `;
 export const footer = styled.Text`
-background-color: black;
+background-color: #0a84ff;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 71px;
+    margin-top: 104px;
     padding: 30px;
     width: 100%;
     height: 80px;
