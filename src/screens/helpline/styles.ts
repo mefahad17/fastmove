@@ -34,6 +34,7 @@ padding-bottom: 20px;
   font-weight: bold;
   font-size:25px;
   margin-left: 10px;
+  margin-top:10px;
   
 `;
 export const Stack = styled.View`

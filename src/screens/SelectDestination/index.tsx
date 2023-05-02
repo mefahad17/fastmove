@@ -1,6 +1,7 @@
 
-import { Text,View } from 'react-native';
+import { Text,View,Platform,TouchableOpacity, Modal,TextInput, } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import Calendar from 'react-native-calendars/src/calendar';
 
 
 import Button from '../../components/Button';
@@ -12,15 +13,15 @@ import * as S from './styles';
 import CarButton from '../../components/CarButton';
 
 
-const SelectDestination: React.FC = () => {
+const SelectDestination: React.FC= () => {
   const navigation = useNavigation();
-  
-  
   const [selectedDay, setSelectedDay] = useState<number>(1);
   const [selectedMonth, setSelectedMonth] = useState<number>(1);
   const [selectedYear, setSelectedYear] = useState<number>(100);
-  
+ 
 
+ 
+  
   const days = [...Array(31).keys()].map(i => i + 1);
   const months = [
     'January',
@@ -37,9 +38,12 @@ const SelectDestination: React.FC = () => {
     'December',
   ];
   const years = [...Array(10).keys()].map(i => i + 2022);
-  const [selected, setSelected] = useState('economy');
+  const [selected, setSelected] = useState('');
   const [selectedValue, setSelectedValue] = useState("1");
- 
+  const [from, setFrom] = useState('');
+  const [to, setTo] = useState('');
+  const [focused, setFocused] = useState('');
+
 
   return (
     <S.Container>
@@ -50,8 +54,20 @@ const SelectDestination: React.FC = () => {
           <S.Dot secondary = {true}/>
         </S.Timeline>
         <S.FromTo>
-          <S.From placeholder="From"></S.From>
-          <S.To placeholder="To"></S.To>
+        <S.Input
+          value={from}
+          onChangeText={setFrom}
+          onFocus={() => setFocused('from')}
+          focused={focused === 'from'}
+          placeholder='From'
+        />
+        <S.Input
+          value={to}
+          onChangeText={setTo}
+          onFocus={() => setFocused('to')}
+          focused={focused === 'to'}
+          placeholder='To'
+        />
         </S.FromTo>
       </S.TopContainer>
       <S.Shadow />
@@ -76,6 +92,7 @@ const SelectDestination: React.FC = () => {
           <Picker.Item label={month} value={index+1} key={month} />
         ))}
       </Picker>
+
       
 
       
@@ -94,28 +111,15 @@ const SelectDestination: React.FC = () => {
         <Picker.Item label="5" value="5" />
       </Picker>
     </View>
-    
-    <S.Options style={{margin:30,marginLeft:10,}}>
-          <CarButton
-            text="Economy"
-            onPress={() => setSelected('economy')}
-            active={selected === 'economy'}
-          />
-          <CarButton
-            text="Luxury"
-            onPress={() => setSelected('luxury')}
-            active={selected === 'luxury'}
-          />
-          <CarButton
-            text="Family"
-            onPress={() => setSelected('family')}
-            active={selected === 'family'}
-          />
-        </S.Options>
-       
-       
    
-     
+    
+    
+
+
+
+
+
+
       <S.BottomContainer>
         <Button onPress={() => navigation.navigate('Request')}>Search</Button>
       </S.BottomContainer>
@@ -124,4 +128,8 @@ const SelectDestination: React.FC = () => {
 
 };
 
+
+
 export default SelectDestination;
+
+

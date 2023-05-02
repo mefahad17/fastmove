@@ -9,7 +9,7 @@ import Home from './screens/Home';
 
 import Verification from './screens/Verification';
 import Login from './screens/Login';
-import AddCard from './screens/AddCard';
+import AddCard from './screens/passengerDetails';
 import CurrentLocation from './screens/CurrentLocation';
 import SelectDestination from './screens/SelectDestination';
 import Request from './screens/Request';
@@ -29,6 +29,10 @@ import helpline from './screens/helpline';
 import buscancelled from './screens/buscancelled';
 import AboutUsScreen from './screens/AboutUsScreen';
 import busavailbility from './screens/busavailbility';
+import passengerDetails from './screens/passengerDetails';
+import payments from './screens/payments';
+import Location from './screens/Location';
+
 
 const Stack = createStackNavigator();
 
@@ -57,6 +61,9 @@ const Index: React.FC = () => {
           <Stack.Screen name="buscancelled" component={buscancelled} />
           <Stack.Screen name="AboutUsScreen" component={AboutUsScreen} />
           <Stack.Screen name="busavailbility" component={busavailbility} />
+          <Stack.Screen name="passengerDetails" component={passengerDetails} />
+          <Stack.Screen name="payments" component={payments} />
+          <Stack.Screen name="Location" component={Location} />
           <Stack.Screen
             name="SelectDestination"
             component={SelectDestination}

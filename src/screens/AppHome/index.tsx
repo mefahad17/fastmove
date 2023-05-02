@@ -82,7 +82,7 @@ const AppHome: React.FC = () => {
         </View>
         
       </S.LinkContainer>
-      <S.LinkContainer onPress={() => navigation.navigate('pendingtickets')}>
+      <S.LinkContainer onPress={() => navigation.navigate('Location')}>
         <View style={{ alignItems: 'center' }}>
         <IconK name="pending" size={55} color="white"/>
         <S.CText>Pending tickets</S.CText>

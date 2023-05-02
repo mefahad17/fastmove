@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
+
 
 type SeatStatus = 'available' | 'selected' | 'occupied';
 
@@ -93,6 +96,7 @@ const Seat: React.FC<{ seat: Seat; onPress: () => void }> = ({ seat, onPress }) 
 
 const SeatsReservation: React.FC = () => {
   const [selectedSeats, setSelectedSeats] = useState<string[]>([]);
+  const navigation = useNavigation();
 
   const handleSelectSeat = (seatId: string) => {
     if (selectedSeats.includes(seatId)) {
@@ -106,13 +110,37 @@ const SeatsReservation: React.FC = () => {
     if (selectedSeats.length === 0) {
       alert('Please select at least one seat!');
     } else {
-      // handle booking logic here
+  navigation.navigate('passengerDetails');
     }
+    
   };
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Select your seats</Text>
+      <View style={{ flexDirection: 'row', flex: 1, }}>
+  <View style={{ flex: 1,height:30,marginTop:5, }}>
+    <Text style={{ fontWeight:'bold' }} >bus Name</Text>
+  </View>
+  <View style={{ flex: 1,height:30,marginTop:5, }}>
+    <Text style={{ fontWeight:'bold' }} >From--->To</Text>
+  </View>
+  <View style={{ flex: 1,height:30,marginTop:5, }}>
+    <Text style={{ fontWeight:'bold' }}>Departure Time</Text>
+  </View>
+</View>
+
+      <View style={{ flexDirection: 'row', flex: 1, }}>
+  <View style={{ flex: 1, backgroundColor:'red',height:30,marginTop:5, }}>
+    <Text style={styles.text}>Occupied</Text>
+  </View>
+  <View style={{ flex: 1,backgroundColor:'#0a84ff',height:30,marginTop:5, }}>
+    <Text style={styles.text}>Available</Text>
+  </View>
+  <View style={{ flex: 1, backgroundColor:'green',height:30,marginTop:5, }}>
+    <Text style={styles.text}>Selected</Text>
+  </View>
+</View>
       <View style={styles.seatsContainer}>
         <View style={styles.seatsRow}>
           {seats.slice(0, 2).map(seat => (
@@ -189,8 +217,8 @@ const SeatsReservation: React.FC = () => {
         </View>
         
       </View>
-      <TouchableOpacity style={styles.bookButton} onPress={handleBookNow}>
-        <Text style={styles.bookButtonText}>Book Now</Text>
+      <TouchableOpacity style={styles.bookButton} onPress={handleBookNow} >
+        <Text style={styles.bookButtonText} >Book Now</Text>
       </TouchableOpacity>
     </View>
   );
@@ -199,14 +227,23 @@ const SeatsReservation: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    padding: 10,
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop:20,
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 20,
+  },
+  text:{
+    fontSize: 15,
+    fontWeight: 'bold',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color:'white',
+    
   },
   seatsContainer: {
     justifyContent: 'center',
@@ -215,18 +252,22 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: 5,
+    marginVertical: 3,
   },
   seat: {
     width: 80,
     height: 70,
-    marginHorizontal: 3,
+    marginHorizontal: 5,
     borderRadius: 5,
     alignItems: 'center',
     justifyContent: 'center',
   },
+  busInfo: {
+    fontSize: 18,
+    marginBottom: 10,
+  },
   seatSpacer: {
-    width: 90,
+    width: 100,
   },
   seatText: {
     color: 'white',
@@ -234,17 +275,17 @@ const styles = StyleSheet.create({
   },
   bookButton: {
     backgroundColor: 'green',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
+    paddingHorizontal: 40,
+    height:40,
     borderRadius: 10,
-    marginTop: 20,
+    marginTop: 15,
     alignItems: 'center',
     justifyContent: 'center',
   },
   bookButtonText: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 25,
+    fontSize: 20,
   },
 });
 

@@ -39,15 +39,18 @@ export const Timeline = styled.View`
   width: 12px;
   height: 125px;
   padding: 8% 0;
-  margin-left: 10%;
+  margin-left: 7%;
+
 `;
 
 export const Dot = styled.View<IDot>`
   width: 12px;
-  height: 12px;
+  height: 20px;
   border-radius: 6px;
   background: ${({ secondary, theme }) =>
     secondary ? theme.color.secondary : '#000'};
+  margin-top:-7px;
+  margin-left:-15px;
 `;
 
 export const Dash = styled.View`
@@ -55,10 +58,11 @@ export const Dash = styled.View`
   height: 38px;
   border-left-width: 1px;
   border-left-color: #000;
+  margin-left:-15px;
 `;
 
 export const FromTo = styled.View`
-  width: 100%;
+  width: 90%;
   padding-right: 15%;
 `;
 
@@ -92,19 +96,7 @@ export const Label = styled.Text<ThemeProps>`
   color: ${({ theme }) => theme.color.primary};
 `;
 
-export const Input = styled.TextInput<InputProps>`
-  font-family: ${({ theme }) => theme.font.bold};
-  font-size: 16px;
-  height: 50px;
-  width: 90px;
-  color: ${({ theme }) => theme.color.primary};
-  padding: 5px;
-  border-width: 1px;
-  border-color: ${({ theme, focused }) =>
-    focused ? theme.color.secondary : theme.color.gray};
-  margin: 10px;
-  border-radius: 5px; 
-`;
+
 
 export const HistoryList = styled(FlatList as new () => FlatList<IItemProps>)`
   width: 100%;
@@ -148,4 +140,23 @@ export const Bottom = styled.View`
   bottom: 0;
   width: 100%;
   padding: 10% 10% 30px 10%;
+`;
+export const Input = styled.TextInput<InputProps>`
+  font-family: ${({ theme }) => theme.font.bold};
+  font-size: 15px;
+  color: ${({ theme }) => theme.color.primary};
+  padding: 4px 0;
+  border-bottom-width: 1px;
+  border-bottom-color: ${({ theme, focused }) =>
+    focused ? theme.color.secondary : theme.color.gray};
+  margin-bottom: 10px;
+`;
+
+export const button = styled.View`
+  width: 90%;
+  padding-right: 15%;
+`;
+export const text = styled.View`
+  width: 90%;
+  padding-right: 15%;
 `;

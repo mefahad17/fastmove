@@ -3,6 +3,7 @@ import { Alert, ImageBackgroundBase, TextComponent } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import { useNavigation } from '@react-navigation/native';
 import { DrawerLayoutAndroid } from 'react-native';
+import IconL from "react-native-vector-icons/FontAwesome5";
 
 
 
@@ -24,12 +25,24 @@ const pendings: React.FC = () => {
     <S.Container>    
         <S.Header>
             <S.HeaderView>
-           
-            <S.BoldText>Fast-Move</S.BoldText>
-            </S.HeaderView>
+            
+            <View style={{ alignItems: 'center', flexDirection: 'row', justifyContent: 'space-between', marginLeft: 40 }}>
+  <Text style={{ fontSize: 20, fontWeight: 'bold', alignSelf: 'flex-start', marginLeft: 50 }}>Lahore{'\n'}</Text>
+  <View style={{ alignItems: 'center', marginLeft: 50 }}>
+    <IconL name="bus-alt" size={50} color="#0a84ff" />
+  </View>
+  <Text style={{ fontSize: 20, fontWeight: 'bold', alignSelf: 'flex-start', marginLeft: 70 }}>Multan</Text>
+</View>
+
+
+
+
+
+</S.HeaderView>
             <View style={{ flexDirection: "row", alignItems: "center" }}>
     </View>    
      </S.Header>
+     
      <S.BoldText>Pending Tickets</S.BoldText>
      
 

@@ -3,6 +3,7 @@ import { Alert, ImageBackgroundBase, TextComponent } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import { useNavigation } from '@react-navigation/native';
 import { DrawerLayoutAndroid } from 'react-native';
+import Header from '../../components/Header';
 
 
 
@@ -43,15 +44,7 @@ const complain: React.FC = () => {
 
   return (
     <S.Container>    
-      <S.Header>
-        <S.HeaderView>   
-          <S.BoldText>Fast-Move</S.BoldText>
-        </S.HeaderView>
-        <View style={{ flexDirection: "row", alignItems: "center" }} />
-      </S.Header>
-     
-      <Text style={{ fontSize: 25, textAlign: 'center', fontWeight: 'bold' }}>Complaints</Text>
-
+        <Header title="Complain" boldPosition={1} />
       <S.Inner>
         <S.Label>Name</S.Label>
         <S.Input

@@ -3,6 +3,7 @@ import { Alert, ImageBackgroundBase, TextComponent } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import { useNavigation } from '@react-navigation/native';
 import IconI from "react-native-vector-icons/Feather";
+import Header from '../../components/Header';
 
 
 
@@ -22,16 +23,10 @@ const helpline: React.FC = () => {
     const navigation = useNavigation();
   return (
     <S.Container>    
-        <S.Header>
-            <S.HeaderView>
-           
-            <S.BoldText>Fast-Move</S.BoldText>
-            </S.HeaderView>
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-    </View>    
-     </S.Header>
+      <Header title="Helpline" boldPosition={1}  />
+       
      <S.BoldText>General Queries Helpline</S.BoldText>
-     <Text style={{ marginTop:15,fontSize:15, }}>For E-ticket issuance,SMS delivery or payment deduction/refund realted problems.</Text>
+     <Text style={{ marginTop:20,fontSize:15, }}>For E-ticket issuance,SMS delivery or payment deduction/refund realted problems.</Text>
 
      <S.Stack>
       <S.LinkContainer onPress={() => navigation.navigate('SelectDestination')}>

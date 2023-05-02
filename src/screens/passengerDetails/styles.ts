@@ -1,56 +1,60 @@
 import styled from 'styled-components/native';
+import MapView from 'react-native-maps';
+import { RectButton } from 'react-native-gesture-handler';
 
 import { ThemeProps } from '../../theme';
 
-interface InputProps extends ThemeProps {
-  focused?: boolean;
-}
 
-export const Container = styled.KeyboardAvoidingView`
-  flex: 1;
+export const Container = styled.View`
+ 
 `;
 
+
+export const Header = styled.View`
+padding: 10px;
+margin-top: 10%;
+padding-bottom: 20px;
+  justify-content: flex-end;
+  width: 100%;  
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-width: 2px;
+
+  border-bottom-color: ${({ theme }) => theme.color.gray};
+  `;
+  
+  export const HeaderView = styled.View`
+  flex-direction: row;
+  align-items: center;
+  
+  `;
+  export const BoldText = styled.Text`
+  font-weight: bold;
+  font-size:25px;
+  margin-left: 50px;
+  flex-direction: row;
+  align-items: center;
+  
+`;
+export const Text = styled.Text`
+  font-size:25px;
+  margin-left: 30px;
+  
+`;
 export const Inner = styled.View`
   justify-content: flex-end;
   padding: 40px 10% 5% 10%;
 `;
-
-export const Card = styled.View`
-  justify-content: center;
-  background: #000;
-  height: 170px;
-  padding: 0 8%;
-  border-radius: 20px;
-  margin-bottom: 20px;
-`;
-
-export const CardTop = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-`;
-
-export const CardBottom = styled.View``;
-
-export const CardText = styled.Text<ThemeProps>`
-  font-family: ${({ theme }) => theme.font.bold};
-  font-size: 18px;
-  color: ${({ theme }) => theme.color.white};
-  margin-bottom: 10px;
-`;
-
-export const CardImage = styled.Image``;
-
 export const Label = styled.Text<ThemeProps>`
   font-family: ${({ theme }) => theme.font.regular};
-  font-size: 14px;
+  font-size: 17px;
   color: ${({ theme }) => theme.color.primary};
 `;
 
 export const Input = styled.TextInput<InputProps>`
   font-family: ${({ theme }) => theme.font.bold};
-  font-size: 18px;
+  font-size: 15px;
   color: ${({ theme }) => theme.color.primary};
   padding: 8px 0;
   border-bottom-width: 1px;
@@ -58,7 +62,6 @@ export const Input = styled.TextInput<InputProps>`
     focused ? theme.color.secondary : theme.color.gray};
   margin-bottom: 20px;
 `;
-
 export const CardInputWrapper = styled.View<InputProps>`
   flex-direction: row;
   justify-content: space-between;
@@ -69,27 +72,10 @@ export const CardInputWrapper = styled.View<InputProps>`
     focused ? theme.color.secondary : theme.color.gray};
   margin-bottom: 20px;
 `;
-
 export const CardInput = styled.TextInput<InputProps>`
   flex: 1;
   font-family: ${({ theme }) => theme.font.bold};
   font-size: 18px;
   color: ${({ theme }) => theme.color.primary};
   padding: 8px 0;
-`;
-
-export const CardCamera = styled.Image``;
-
-export const ExpCvvWrapper = styled.View`
-  flex-direction: row;
-  margin-bottom: 20px;
-`;
-
-export const ExpWrapper = styled.View`
-  width: 60%;
-  margin-right: 10%;
-`;
-
-export const CvvWrapper = styled.View`
-  width: 30%;
 `;

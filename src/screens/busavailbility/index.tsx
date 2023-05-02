@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from './types';
+import Header from '../../components/Header';
 
 type Bus = {
   key: string;
@@ -40,6 +41,7 @@ const BusList: React.FC<BusListProps> = ({ navigation }) => {
   const [selected, setSelected] = useState<string[]>([]);
 
   const renderItem = ({ item }: { item: Bus }) => (
+    
     <View style={styles.item}>
       <Text style={styles.busName}>{item.name} ({item.number})</Text>
       <Text style={styles.busCity}>{item.fromCity} - {item.toCity}</Text>
@@ -52,13 +54,13 @@ const BusList: React.FC<BusListProps> = ({ navigation }) => {
 
   const renderSectionHeader = ({ section }: { section: Section }) => (
     <View style={styles.sectionHeader}>
-      <Text style={styles.sectionHeaderText}>{section.title}</Text>
+      
     </View>
   );
 
   return (
+    <><Header title="Bus Details" boldPosition={1} />
     <View style={styles.container}>
-      <Text style={styles.heading}>Bus Details</Text>
       <SectionList
         sections={DATA}
         keyExtractor={(item, index) => item.key + index}
@@ -67,6 +69,8 @@ const BusList: React.FC<BusListProps> = ({ navigation }) => {
         stickySectionHeadersEnabled={true}
       />
     </View>
+    </>
+    
   );
 };
 

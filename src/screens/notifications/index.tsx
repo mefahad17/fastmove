@@ -6,6 +6,7 @@ import { DrawerLayoutAndroid } from 'react-native';
 
 import { Text, View,TouchableOpacity, } from 'react-native';
 import Button from '../../components/Button';
+import Header from '../../components/Header';
 
 
 import * as S from './styles';
@@ -17,13 +18,7 @@ const AboutusScreen: React.FC = () => {
     const navigation = useNavigation();
   return (
     <S.Container>    
-        <S.Header>
-            <S.HeaderView>
-            <S.BoldText>Fast Move</S.BoldText>
-            </S.HeaderView>
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-    </View>    
-     </S.Header>
+        <Header title="Notifications" boldPosition={1} />
      
      
     </S.Container>
