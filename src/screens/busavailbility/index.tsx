@@ -23,11 +23,11 @@ type Section = {
 
 const DATA: Section[] = [
   {
-    title: 'Economy Buses',
+    title: 'AC Buses',
     data: [
-      { key: '1', name: 'ABC Express', number: 'A101', departureTime: '10:00 AM', arrivalTime: '2:00 PM', fromCity: 'City A', toCity: 'City D' },
-      { key: '2', name: 'XYZ Express', number: 'X202', departureTime: '12:00 PM', arrivalTime: '4:00 PM', fromCity: 'City B', toCity: 'City D' },
-      { key: '3', name: 'PQR Express', number: 'P303', departureTime: '2:00 PM', arrivalTime: '6:00 PM', fromCity: 'City C', toCity: 'City D' },
+      { key: '1', name: 'Ak Express', number: 'A101', departureTime: '10:00 AM', arrivalTime: '2:00 PM', fromCity: 'City A', toCity: 'City D' },
+      { key: '2', name: 'Sana Express', number: 'X202', departureTime: '12:00 PM', arrivalTime: '4:00 PM', fromCity: 'City B', toCity: 'City D' },
+      { key: '3', name: 'PR Express', number: 'P303', departureTime: '2:00 PM', arrivalTime: '6:00 PM', fromCity: 'City C', toCity: 'City D' },
     ],
   },
 
