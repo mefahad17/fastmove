@@ -4,6 +4,7 @@ import MapView, { Marker } from 'react-native-maps';
 import { useNavigation } from '@react-navigation/native';
 import { DrawerLayoutAndroid } from 'react-native';
 import IconL from "react-native-vector-icons/FontAwesome5";
+import Header from '../../components/Header';
 
 
 
@@ -41,16 +42,13 @@ const pendings: React.FC = () => {
 </S.HeaderView>
             <View style={{ flexDirection: "row", alignItems: "center" }}>
     </View>    
+    <Header title="Pending Tickets" boldPosition={1} />
      </S.Header>
-     
-     <S.BoldText>Pending Tickets</S.BoldText>
+    
      
 
     
-        
-      
-     
-      
+  
     
  
       
